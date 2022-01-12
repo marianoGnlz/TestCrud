@@ -1,0 +1,49 @@
+﻿@page
+@model TestCrud.Pages.Admin.ViewUsersModel
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Users[0].UserName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Users[0].Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Users[0].DNI)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                        @foreach (var item in Model.Users) {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UserName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DNI)
+                                    </td>
+                                    <td>
+                                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                        }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

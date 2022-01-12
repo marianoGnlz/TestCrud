@@ -1,0 +1,44 @@
+﻿@page
+@model TestCrud.Pages.Admin.CreateUserModel
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="NewUser.Email" class="control-label"></label>
+                        <input asp-for="NewUser.Email" class="form-control" />
+                        <span asp-validation-for="NewUser.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="NewUser.UserName" class="control-label"></label>
+                        <input asp-for="NewUser.UserName" class="form-control" />
+                        <span asp-validation-for="NewUser.UserName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="NewUser.DNI" class="control-label"></label>
+                        <input asp-for="NewUser.DNI" class="form-control" />
+                        <span asp-validation-for="NewUser.DNI" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="NewUser.DNI" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="form-group d-flex justify-content-center">
+                        <input type="submit" value="Crear Usuario" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
